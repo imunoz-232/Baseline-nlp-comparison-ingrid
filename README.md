@@ -196,3 +196,9 @@ See WORKED_NLP_MATH_EXAMPLE.md for a tiny 3-sentence corpus where students can m
 - Cosine retrieval ranking
 - One linear classifier score
 - One KMeans assignment/update iteration
+
+## Printable worksheet for class
+Use these files for a quick in-class hand-calculation activity:
+
+- NLP_BY_HAND_WORKSHEET.md
+- NLP_BY_HAND_WORKSHEET_ANSWER_KEY.md
