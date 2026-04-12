@@ -42,7 +42,6 @@ def _train_eval_once(
     clf = LogisticRegression(
         C=config["C"],
         max_iter=1200,
-        multi_class="auto",
         random_state=42,
     )
     clf.fit(x_train, y_train)
@@ -112,7 +111,6 @@ def run_classification_route(
     final_clf = LogisticRegression(
         C=best_config["C"],
         max_iter=1200,
-        multi_class="auto",
         random_state=42,
     )
     final_clf.fit(x_train_full, y_train)
