@@ -223,6 +223,41 @@ These control feature richness vs. overfitting risk.
 - Higher `C` = weaker regularization, more flexible fit, higher overfitting risk.
 - Lower `C` = stronger regularization, simpler decision boundary, possible underfitting.
 
+### Regularization C (deeper beginner explanation)
+
+What `C` is:
+
+- In scikit-learn, `C` is the inverse of regularization strength.
+- Larger `C` means less penalty on large weights.
+- Smaller `C` means more penalty on large weights.
+
+Math intuition:
+
+- Logistic Regression learns weights `W` that minimize:
+- `data_loss + lambda * ||W||^2`
+- `C` is approximately proportional to `1/lambda`.
+
+So:
+
+- `C` up -> `lambda` down -> weaker regularization.
+- `C` down -> `lambda` up -> stronger regularization.
+
+Why this matters in text models:
+
+- BoW/TF-IDF can produce tens of thousands of sparse features.
+- Without enough regularization, the model may assign very large weights to rare words and memorize noise.
+- With too much regularization, the model can become too simple and miss useful patterns.
+
+Practical signs:
+
+- Train score high, validation score lower: likely overfitting, try lower `C`.
+- Train and validation both low: likely underfitting, try higher `C` or richer features.
+
+Simple grid to try:
+
+- `C in [0.01, 0.1, 1, 10, 100]`
+- Choose based on validation/test metrics (not training score alone).
+
 ### Why this is called a tradeoff
 
 If features are too simple, the model underfits.
