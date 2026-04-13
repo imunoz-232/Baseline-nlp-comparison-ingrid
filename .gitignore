@@ -26,6 +26,9 @@ htmlcov/
 # Notebook checkpoints
 .ipynb_checkpoints/
 
+# Generated PDF rendering intermediates
+*_mathjax.html
+
 # OS files
 .DS_Store
 Thumbs.db
@@ -41,3 +44,6 @@ traditional_feature_creator_bag_of_words.py
 test_classifier_LSTM_1.py
 text_classifier_LSTM_1.py
 text_classifier_LSTM_pytorch.py
+
+# Instructor-only files
+NLP_BY_HAND_WORKSHEET_ANSWER_KEY.md
