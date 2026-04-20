@@ -24,6 +24,7 @@ The objective of this project is to understand how NLP models work and compare t
 
 ## Business Value
 This type of analysis can help companies understand large amounts of text data, such as customer reviews, emails, or support tickets, and make better decisions based on patterns found in the data.
+This project shows how companies can analyze large amounts of text data, such as customer reviews or emails, to support better decision-making.
 
 ## Author
 Ingrid Munoz
