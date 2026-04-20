@@ -28,10 +28,7 @@ This project shows how companies can analyze large amounts of text data, such as
 
 ## One-line Reproducible Run
 
-git clone https://github.com/imunoz-232/Baseline-nlp-comparison-ingrid.git
-cd Baseline-nlp-comparison-ingrid
-pip install -r requirements.txt
-python newsgroups_end_to_end_practice.py
+git clone https://github.com/imunoz-232/Baseline-nlp-comparison-ingrid.git && cd Baseline-nlp-comparison-ingrid && pip install -r requirements.txt && python newsgroups_end_to_end_practice.py
 
 ## Alternative (with virtual environment)
 
