@@ -97,3 +97,32 @@ def run_baseline_route(
         best_model_accuracy=best_acc,
         best_model_macro_f1=best_macro_f1,
     )
+if __name__ == "__main__":
+    print("Running baseline models...")
+
+    from sklearn.datasets import fetch_20newsgroups
+    from sklearn.model_selection import train_test_split
+
+    # Load dataset
+    data = fetch_20newsgroups(subset="all")
+    texts = data.data
+    labels = data.target
+
+    # Split
+    train_texts, test_texts, y_train, y_test = train_test_split(
+        texts,
+        labels,
+        test_size=0.2,
+        stratify=labels,
+        random_state=42
+    )
+
+    # Run pipeline
+    result = run_baseline_route(train_texts, test_texts, y_train, y_test)
+
+    print("\nFINAL RESULTS")
+    print("Best Model:", result.best_model_name)
+    print("Best Accuracy:", result.best_model_accuracy)
+    print("Best Macro F1:", result.best_model_macro_f1)
+    
+    

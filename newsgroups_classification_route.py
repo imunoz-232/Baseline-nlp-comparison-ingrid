@@ -139,3 +139,35 @@ def run_classification_route(
         test_macro_f1=test_macro_f1,
         best_config=best_config,
     )
+if __name__ == "__main__":
+    print("Running classification route...")
+
+    from sklearn.datasets import fetch_20newsgroups
+    from sklearn.model_selection import train_test_split
+
+    data = fetch_20newsgroups(subset="all")
+    texts = data.data
+    labels = data.target
+    target_names = data.target_names  # 🔥 necesario
+
+    train_texts, test_texts, y_train, y_test = train_test_split(
+        texts,
+        labels,
+        test_size=0.2,
+        stratify=labels,
+        random_state=42
+    )
+
+    result = run_classification_route(
+        train_texts,
+        test_texts,
+        y_train,
+        y_test,
+        target_names
+    )
+
+    print("\nFINAL RESULTS")
+    print("Best Validation Accuracy:", result.best_validation_accuracy)
+    print("Test Accuracy:", result.test_accuracy)
+    print("Test Macro F1:", result.test_macro_f1)
+    print("Best Config:", result.best_config)
