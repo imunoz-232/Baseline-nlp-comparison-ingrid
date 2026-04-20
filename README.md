@@ -32,7 +32,7 @@ git clone https://github.com/imunoz-232/Baseline-nlp-comparison-ingrid.git && cd
 
 ## Alternative (with virtual environment)
 
-python -m venv .venv'''
+python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
 python newsgroups_end_to_end_practice.py
