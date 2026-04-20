@@ -26,5 +26,19 @@ The objective of this project is to understand how NLP models work and compare t
 This type of analysis can help companies understand large amounts of text data, such as customer reviews, emails, or support tickets, and make better decisions based on patterns found in the data.
 This project shows how companies can analyze large amounts of text data, such as customer reviews or emails, to support better decision-making.
 
+## One-line Reproducible Run
+
+git clone https://github.com/imunoz-232/Baseline-nlp-comparison-ingrid.git
+cd Baseline-nlp-comparison-ingrid
+pip install -r requirements.txt
+python newsgroups_end_to_end_practice.py
+
+## Alternative (with virtual environment)
+
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+python newsgroups_end_to_end_practice.py
+
 ## Author
 Ingrid Munoz
