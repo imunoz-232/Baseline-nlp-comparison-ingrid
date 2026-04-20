@@ -40,25 +40,25 @@ def run_baseline_route(
     pipelines = {
         "Count + MultinomialNB": Pipeline(
             [
-                ("vec", CountVectorizer(stop_words="english", min_df=2)),
+                ("vec", CountVectorizer(stop_words="english", min_df=1)),
                 ("clf", MultinomialNB(alpha=0.5)),
             ]
         ),
         "Count + LogisticRegression": Pipeline(
             [
-                ("vec", CountVectorizer(stop_words="english", min_df=2, max_features=30000)),
+                ("vec", CountVectorizer(stop_words="english", min_df=1, max_features=30000)),
                 ("clf", LogisticRegression(max_iter=1200, C=1.0, random_state=42)),
             ]
         ),
         "TFIDF + MultinomialNB": Pipeline(
             [
-                ("vec", TfidfVectorizer(stop_words="english", min_df=2)),
+                ("vec", TfidfVectorizer(stop_words="english", min_df=1)),
                 ("clf", MultinomialNB(alpha=0.3)),
             ]
         ),
         "TFIDF + LinearSVC": Pipeline(
             [
-                ("vec", TfidfVectorizer(stop_words="english", min_df=2, max_features=40000)),
+                ("vec", TfidfVectorizer(stop_words="english", min_df=1, max_features=40000)),
                 ("clf", LinearSVC(C=1.0, random_state=42)),
             ]
         ),

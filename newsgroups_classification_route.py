@@ -70,13 +70,12 @@ def run_classification_route(
         y_train,
         test_size=0.2,
         random_state=42,
-        stratify=y_train,
     )
 
     candidate_configs = [
-        {"name": "cfg_1", "ngram_range": (1, 1), "min_df": 2, "max_features": 25000, "C": 1.0},
-        {"name": "cfg_2", "ngram_range": (1, 2), "min_df": 2, "max_features": 35000, "C": 1.0},
-        {"name": "cfg_3", "ngram_range": (1, 2), "min_df": 3, "max_features": 30000, "C": 2.0},
+        {"name": "cfg_1", "ngram_range": (1, 1), "min_df": 1, "max_features": 25000, "C": 1.0},
+        {"name": "cfg_2", "ngram_range": (1, 2), "min_df": 1, "max_features": 35000, "C": 1.0},
+        {"name": "cfg_3", "ngram_range": (1, 2), "min_df": 1, "max_features": 30000, "C": 2.0},
     ]
 
     print("\nTuning spot:")
@@ -148,13 +147,12 @@ if __name__ == "__main__":
     data = fetch_20newsgroups(subset="all")
     texts = data.data
     labels = data.target
-    target_names = data.target_names  # 🔥 necesario
+    target_names = data.target_names  
 
     train_texts, test_texts, y_train, y_test = train_test_split(
         texts,
         labels,
         test_size=0.2,
-        stratify=labels,
         random_state=42
     )
 

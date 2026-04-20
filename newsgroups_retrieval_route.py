@@ -36,7 +36,7 @@ def run_retrieval_route(
     print("Goal:")
     print("  Use a document as a query and retrieve top-k similar documents.")
 
-    vectorizer = TfidfVectorizer(stop_words="english", max_features=45000, min_df=2)
+    vectorizer = TfidfVectorizer(stop_words="english", max_features=45000, min_df=1)
     x_train = vectorizer.fit_transform(train_texts)
     x_test = vectorizer.transform(test_texts)
 

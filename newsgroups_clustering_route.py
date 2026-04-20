@@ -32,7 +32,7 @@ def run_clustering_route(
     print("Goal:")
     print("  Group similar documents without using labels during training.")
 
-    vectorizer = TfidfVectorizer(stop_words="english", max_features=40000, min_df=2)
+    vectorizer = TfidfVectorizer(stop_words="english", max_features=40000, min_df=1)
     x_all = vectorizer.fit_transform(all_texts)
 
     candidate_k = sorted({max(5, expected_k // 2), expected_k, expected_k + 10})
